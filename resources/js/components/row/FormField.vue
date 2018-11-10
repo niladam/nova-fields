@@ -15,7 +15,7 @@
       <div
         v-for="(row, index) in values"
         :key="row.row_id"
-        class="flex items-center border-40 border relative"
+        class="flex flex-col border-40 border relative"
       >
         <component
           class="remove-bottom-border w-full"
@@ -31,7 +31,7 @@
           :errors="errors"
         />
         <span
-          class="flex items-center justify-center bg-danger text-white p-2 m-2 w-6 h-6 rounded-full cursor-pointer font-bold"
+          class="flex flex-col justify-center bg-danger text-white p-2 m-2 w-6 h-6 rounded-full cursor-pointer font-bold"
           @click="rowToRemove = row.row_id"
         >x</span>
       </div>
@@ -111,7 +111,7 @@ export default {
         const split = curr.split('.');
 
         if (split[0] !== this.field.attribute) {
-          return acc;          
+          return acc;
         }
 
         // replace fieldname in error messages
